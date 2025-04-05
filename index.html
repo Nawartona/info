@@ -3,122 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Invitation and Attendance System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>EventSync - Smart Invitation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        /* Background Image and General Page Style */
-        .background {
-            background-image: url("https://github.com/Nawartona/info/blob/main/image.png?raw=true");
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 153, 153, 0.7)),
+                        url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80");
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            color: black;
+            justify-content: center;
         }
 
-        /* Overlay for better text visibility */
-        .overlay {
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        .hero-content {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
-            font-size: 36px;
-            margin: 0;
-            font-weight: 600;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            font-size: 28px;
-            margin-top: 20px;
-            color: #4CAF50;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #ffd700;
+            margin-bottom: 1.5rem;
         }
 
         p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-top: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 30px;
-            font-size: 16px;
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 32px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
+            border-radius: 25px;
+            font-weight: 400;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
 
-        .button:hover {
-            background-color: #45a049;
+        .btn-primary {
+            background: #ffd700;
+            color: #003366;
         }
 
-        footer {
-            background-color: #333;
+        .btn-primary:hover {
+            background: #e6c200;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
             color: white;
-            padding: 20px 0;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #003366;
+            transform: translateY(-2px);
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            background: #f9f9f9;
             text-align: center;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 14px;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 30px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .button {
-                font-size: 14px;
-                padding: 10px 25px;
-            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+            .btn { padding: 10px 24px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-
-    <div class="background">
-        <div class="overlay">
-            <h1>Automated Event Invitation & Attendance System</h1>
-            <h2>Welcome to Our Seamless Event Management Solution</h2>
-            <p>
-                Our project is an automated event invitation and attendance management system designed to streamline the process of inviting guests to important events. 
-                Using the WhatsApp Business API, we send personalized invitations, confirm attendance, provide event details, and track guest arrivals with QR code validation.
-            </p>
-            <p>
-                The system ensures a smooth and efficient event experience for both the hosts and the guests, saving time and improving organization.
-            </p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>EventSync</h1>
+            <h2>Revolutionary Event Management Solution</h2>
+            <p>Transform your event planning with our automated invitation and attendance system. Powered by WhatsApp Business API, we offer personalized invites, real-time RSVP tracking, and seamless QR code check-ins.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="#" class="btn btn-secondary">Watch Demo</a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose EventSync?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Smart Invitations</h3>
+                <p>Send personalized WhatsApp invites with event details and RSVP options.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-Time Tracking</h3>
+                <p>Monitor attendance and get instant updates on guest responses.</p>
+            </div>
+            <div class="feature-card">
+                <h3>QR Code Check-In</h3>
+                <p>Fast, secure entry with unique QR codes for each guest.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Time-Saving</h3>
+                <p>Automate your workflow and focus on creating memorable events.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Event Invitation System. All rights reserved.</p>
+        <p>© 2025 EventSync - Powered by xAI Technology. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
