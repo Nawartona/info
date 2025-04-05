@@ -8,59 +8,49 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f6;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 60px 0;
+        /* Background Image and General Page Style */
+        .background {
+            background-image: url("https://github.com/Nawartona/info/blob/main/image.png?raw=true");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            color: black;
         }
 
-        header h1 {
+        /* Overlay for better text visibility */
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
             font-size: 36px;
             margin: 0;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        main {
-            padding: 40px;
-            text-align: center;
+            font-weight: 600;
         }
 
         h2 {
             font-size: 28px;
+            margin-top: 20px;
             color: #4CAF50;
-            margin-bottom: 20px;
         }
 
         p {
             font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 30px;
-            color: #555;
-        }
-
-        .image-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .image-container img {
-            width: 70%;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.05);
+            margin-top: 20px;
         }
 
         .button {
@@ -90,14 +80,8 @@
             font-size: 14px;
         }
 
-        /* Animation for fading in the header */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         @media (max-width: 768px) {
-            header h1 {
+            h1 {
                 font-size: 30px;
             }
 
@@ -113,35 +97,25 @@
                 font-size: 14px;
                 padding: 10px 25px;
             }
-
-            .image-container img {
-                width: 90%;
-            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Automated Event Invitation & Attendance System</h1>
-    </header>
-
-    <main>
-        <h2>Welcome to Our Seamless Event Management Solution</h2>
-        
-        <div class="image-container">
-            <img src="https://github.com/Nawartona/info/blob/main/image.png?raw=true" alt="Event Management System">
+    <div class="background">
+        <div class="overlay">
+            <h1>Automated Event Invitation & Attendance System</h1>
+            <h2>Welcome to Our Seamless Event Management Solution</h2>
+            <p>
+                Our project is an automated event invitation and attendance management system designed to streamline the process of inviting guests to important events. 
+                Using the WhatsApp Business API, we send personalized invitations, confirm attendance, provide event details, and track guest arrivals with QR code validation.
+            </p>
+            <p>
+                The system ensures a smooth and efficient event experience for both the hosts and the guests, saving time and improving organization.
+            </p>
+            <a href="#" class="button">Learn More</a>
         </div>
-
-        <p>
-            Our project is an automated event invitation and attendance management system designed to streamline the process of inviting guests to important events. 
-            Using the WhatsApp Business API, we send personalized invitations, confirm attendance, provide event details, and track guest arrivals with QR code validation.
-        </p>
-        <p>
-            The system ensures a smooth and efficient event experience for both the hosts and the guests, saving time and improving organization.
-        </p>
-        <a href="#" class="button">Learn More</a>
-    </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Event Invitation System. All rights reserved.</p>
