@@ -1,56 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Invitation System</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Invitation and Attendance System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f7f7f7;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-      }
-      main {
-        padding: 20px;
-        text-align: center;
-      }
-      h1 {
-        color: #333;
-      }
-      p {
-        color: #555;
-        font-size: 18px;
-      }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Animation for fading in the header */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 10px 25px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <header>
-      <h1>Event Invitation and Attendance System</h1>
+        <h1>Automated Event Invitation & Attendance System</h1>
     </header>
 
     <main>
-      <h2>Welcome to Our Automated Event Management System</h2>
-      <p>
-        Our project is an automated event invitation and attendance management
-        system designed to streamline the process of inviting guests to
-        important events. This system leverages WhatsApp Business API to send
-        personalized invitations, confirm attendance, provide event details, and
-        track guest arrivals through QR code validation. The solution enhances
-        event organization efficiency and ensures seamless communication between
-        event hosts and attendees.
-      </p>
-      <p>
-        This solution is designed to make event planning easier and more
-        organized by automating the process of guest invitations and attendance
-        tracking.
-      </p>
+        <h2>Welcome to Our Seamless Event Management Solution</h2>
+        <p>
+            Our project is an automated event invitation and attendance management system designed to streamline the process of inviting guests to important events. 
+            Using the WhatsApp Business API, we send personalized invitations, confirm attendance, provide event details, and track guest arrivals with QR code validation.
+        </p>
+        <p>
+            The system ensures a smooth and efficient event experience for both the hosts and the guests, saving time and improving organization.
+        </p>
+        <a href="#" class="button">Learn More</a>
     </main>
-  </body>
+
+    <footer>
+        <p>&copy; 2025 Event Invitation System. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
